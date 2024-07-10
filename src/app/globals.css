@@ -7,9 +7,11 @@
 }
 
 body {
+  font-size: 14px;
+}
+.bg-light-gray {
   background: var(--background-light-gray);
 }
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;

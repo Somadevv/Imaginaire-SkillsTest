@@ -1,12 +1,15 @@
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Imaginaire",
-};
+const links = [
+  { label: "Home", href: "home" },
+  { label: "T-Shirts", href: "t-shirts" },
+  { label: "Jeans", href: "jeans" },
+  { label: "Shoes", href: "shoes" },
+];
 
 export default function RootLayout({
   children,
@@ -15,7 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Header links={links} title="Stoor" />
+        {children}
+
+        <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+      </body>
     </html>
   );
 }
